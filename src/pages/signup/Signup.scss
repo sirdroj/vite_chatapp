@@ -1,0 +1,51 @@
+nav{
+    background-color: purple;
+    height: 3rem;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-size: 28px;
+        // margin :20px;
+    }
+    a{
+        margin:10px;
+        cursor: pointer;
+    }
+}
+.signup{
+    // border: solid;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 18px;
+    form{
+        h1{
+            font-size: 28px;
+            // margin :10px;
+            // font-weight: no;
+        }
+        sup{
+            font-weight: bold;
+        }
+        padding: 20px;
+        // text-align: left;
+        border: solid;
+        width: 300px;
+        input{
+            border: solid;
+            border-width:0.1px ;
+            width: 100%;
+            margin-top: 5px;
+            height: 2rem;
+            font-size: 22px;
+        }
+        h2,P{
+            text-align: left;
+            font-weight: normal;
+        }
+    }
+
+}
