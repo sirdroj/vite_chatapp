@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getchat, sendmessage, deletemessage } from "../../Database_utils";
 
 import "./Chatbox.scss";
@@ -6,10 +6,18 @@ import "./Chatbox.scss";
 const Chatbox = ({ user }) => {
   const [chats, setchats] = useState([]);
   const [text, settext] = useState("");
-
+  const chatContainerRef = useRef(null);
+  function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  useEffect(()=>{
+    scrollToBottom();
+  },[chats])
+  
   useEffect(() => {
     console.log("Chatbox");
     getchat(setchats);
+    
   }, []);
 
   const hSumbit = (e) => {
@@ -24,7 +32,7 @@ const Chatbox = ({ user }) => {
 
   return (
     <div className="chatbox">
-      <div className="chats">
+      <div className="chats" ref={chatContainerRef}>
         {chats.map((chat) => {
           console.log("here",chat,chat.user_id,chat.color)
           let hisstyle={"border-color":chat.color}
