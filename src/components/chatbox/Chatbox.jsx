@@ -39,7 +39,11 @@ const Chatbox = ({ user }) => {
           return (
             <div className="messagewrap"  style={{ "justify-content": user.user_id==chat.user_id ? 'left' : 'right' }}>
               <div className="message" style={hisstyle}>
-                  <p className="messagetext "> {chat.message}</p>
+                  <div className="messagetext "> 
+                  <p>{chat.message}</p>
+
+                  <sub><p>{chat.user_id}</p><p>{}</p></sub>
+                  </div>
                 <div className="">
                   {/* <sub className="">user: {chat.user_id}</sub> */}
                   <div>

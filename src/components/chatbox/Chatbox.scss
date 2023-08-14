@@ -22,7 +22,7 @@
       justify-content: right;
 
       .message {
-        background-color: wheat;
+        background-color: rgba(128, 0, 128, 0.212);
         padding-left: 5px;
         padding-right: 5px;
         border-radius: 10px;
@@ -36,8 +36,12 @@
           // width:100px;
           overflow: hidden;
           max-width: 250px;
-          display: flex;
+          // display: flex;
           // border:solid;
+          sub{
+            font-size: 10px;
+            // width: max;
+          }
         }
       }
     }
@@ -87,6 +91,9 @@
         .message {
           .messagetext {
             max-width: 550px;
+            sub{
+              font-size: 13px;
+            }
           }
         }
       }
