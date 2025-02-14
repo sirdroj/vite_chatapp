@@ -11,6 +11,8 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         inter: ["Inter", "sans-serif"], // Add Inter as a font family
+        asap: ["Asap", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
 
 
 
