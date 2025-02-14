@@ -41,7 +41,7 @@ const Signup = ({ setpg }) => {
       id.length > 3,
       check == 3
     );
-    console.log("check",check)
+    console.log("check", check);
     setallgood(false);
     if (id == p1 && id == "") {
       setabovep("");
@@ -58,51 +58,78 @@ const Signup = ({ setpg }) => {
     }
   }, [id, p1, p2, allgood]);
   return (
-    <div>
-      <nav>
-        <h1>Smart chat</h1>
-        <a onClick={() => {setpg(0); }} >
-          login
-        </a>
-      </nav>
-      <div className="signup">
-        <form onSubmit={handlesubmit}>
-          <h1>signup</h1>
-          <sup style={{ color: allgood ? "rgb(116, 255, 81)" : "red" }}>
-            {abovep}
-          </sup>
-          <h2 className="loginboxelements">User Id</h2>
-          <input
-            className="loginboxelements"
-            type="text"
-            onChange={(e) => {
-              setid(e.target.value);
-            }}
-          />
-          <h2 className="loginboxelements">Password</h2>
-          <input
-            className="loginboxelements"
-            type="text"
-            onChange={(e) => {
-              setp1(e.target.value);
-              if (p1 !== p2) {
-                setabovep("passwords doesnot match");
-              }
-            }}
-          />
-          <h2 className="loginboxelements">confirm Password</h2>
-          <input
-            className="loginboxelements"
-            type="text"
-            onChange={(e) => {
-              setp2(e.target.value);
-              if (p1 !== p2) {
-                setabovep("passwords doesnot match");
-              }
-            }}
-          />
-          <input type="submit" value="signup" />
-        </form>
+    <div className=" flex justify-center p-5  h-screen bg-[#D4E4FF]">
+      <div className="">
+        <div>
+          <img className="h-[200px]" src="Group 3.svg" />
+        </div>
+        <div className="flex justify-center">
+          <div>
+            <div className="text-[30px] font-bold text-blue1 text-center">
+              Open Chat
+            </div>
+            <div className="loginbox border-[px]">
+            <p className="text-center text-black min-h-[20px] text-[13px]">{abovep}</p>
+            <form
+                onSubmit={handlesubmit}
+                className="space-y-2 w-[300px] text-sm"
+              >
+                <h2 className="loginboxelements">User Id</h2>
+                <input
+className="rounded-md px-2 p-1 w-full outline-none focus:ring-1 focus:ring-[#C3C2FF]"
+type="text"
+                  onChange={(e) => {
+                    setid(e.target.value);
+                  }}
+                />
+                <h2 className="loginboxelements">Password</h2>
+                <input
+                  className="rounded-md px-2 pt-1  w-full active:stroke-none outline-[#C3C2FF] outline-[1px]"
+                  type="password"
+                  placeholder="******"
+                  onChange={(e) => {
+                    setp1(e.target.value);
+                    if (p1 !== p2) {
+                      setabovep("passwords doesnot match");
+                    }
+                  }}
+                />
+                <h2 className="loginboxelements">confirm Password</h2>
+                <input
+                  className="rounded-md px-2 pt-1  w-full active:stroke-none outline-[#C3C2FF] outline-[1px]"
+                  type="password"
+                  placeholder="******"
+                  onChange={(e) => {
+                    setp2(e.target.value);
+                    if (p1 !== p2) {
+                      setabovep("passwords doesnot match");
+                    }
+                  }}
+                />
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="p-2 py-4 mt-7  text-center w-full bg-blue1 text-white rounded-lg text-lg"
+                  >
+                    SIGNUP
+                  </button>
+                </div>
+              </form>
+              <p className="my-3 text-sm text-center">
+                Already Have one ?{" "}
+                <span
+                  className="text-blue1 cursor-pointer font-bold underline"
+                  onClick={() => {
+                    setpg(0);
+                  }}
+                >
+                  Login
+                </span>{" "}
+                using your ID.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
