@@ -94,7 +94,7 @@ const Chatbox = ({ user }) => {
             scrollbar-color: #888 #f1f1f1;
           }
         `}
-      </style>s
+      </style>
               {/* {chats.map((chat) => {
                 let hisstyle = { borderColor: chat.color };
                 if (current_colour != chat.color) {
